@@ -28,12 +28,15 @@ export class AppComponent {
       validChars += symbols;
     }
 
-    let generatedPasssword = "";
+    let generatedPassword = "";
     for (let i = 0; i < this.passwordLength; i++){
       const index = Math.floor(Math.random() * validChars.length);
-      generatedPasssword += validChars[index];
+      generatedPassword += validChars[index];
     }
-    this.password = generatedPasssword;
+    if (generatedPassword !== " ") {
+      this.password = generatedPassword;
+    }
+    
   }
 
   onChangePasswordLength(value:any) {
